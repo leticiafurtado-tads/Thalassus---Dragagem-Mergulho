@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.banner, .banner1 {
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Centraliza o texto */
+}
+
+.banner1 img {
+  opacity: 0.1; /* Aplica opacidade apenas à imagem */
+}
+
+.banner1 h1, .banner1 p {
+  font-size: 2rem; /* Ajuste o tamanho da fonte conforme necessário */
+  z-index: 1; /* Garante que o texto fique sobre a imagem */
+  margin: 0; /* Remova a margem padrão */
+}
+
+.banner1 p {
+  width: 80%;
+  text-align: justify;
+  color: #333333;
+  font-size: clamp(12px, 3vw, 20px); /* Ajuste a escala conforme necessário */
+  margin-top: 1rem; /* Margem superior para espaçamento */
+}
+
+.banner1 h1 {
+  color: #063399;
+  font-size: clamp(24px, 5vw, 36px); /* Ajuste a escala conforme necessário */
+}
+
+nav {
+  display: flex;
+  background-color: #ffffff;
+  opacity: 0.8;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  height: 40%;
+  width: 100%;
+  align-items: flex-end;
+  z-index: 1000;
+}
+
+nav li a:hover {
+  background-color: #aaaaaa;
+  color: #000000;
+  font-weight: bold;
+  opacity: 1;
+}
+
+nav li {
+  background-color: #ffffff;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  font-weight: bold;
+}
+
+.menu a {
+  display: flex;
+  text-decoration: none;
+  font-size: clamp(16px, 4vw, 20px);
+  padding: 10px;
+  border-radius: 5px;
+  color: #063399;
+}
+
+a.ativo {
+  color: #000000;
+  font-weight: bold;
+}
+
+.container {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 75%;
+  padding-top: 0;
+  padding-left: 20%;
+  padding-right: 20%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container h1, h2, h3 {
+  text-align: center;
+  color: #063399;
+}
+
+.lista {
+  font-size: clamp(8px, 5vw, 16px);
+  color: #333333;
+}
+
+.lista img {
+  float: left;
+  margin-right: 50px;
+  margin-left: 100px;
+}
+
+table {
+  width: 50%;
+  margin: 0 auto;
+}
+
+th, td {
+  border: none;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  width: clamp(50px, 20vw, 200px);
+  height: auto;
+}
+
+table h4 {
+  color: #063399;
+  text-decoration: underline;
+  margin-top: 0;
+}
+
+.galeria {
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.galeria img {
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.galeria figure {
+  width: calc(30% - 20px);
+  margin: 10px;
+}
+
+figcaption {
+  font-size: clamp(8px, 2vw, 14px);
+  color: #001248;
+  font:bold;
+}
+
+figure:active {
+  transform: scale(1.1);
+}
+
+figure {
+  width: 100%;
+}
+
+form {
+  font-size: clamp(12px, 5vw, 16px);
+  color: #333333;
+  text-align: center;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+form legend {
+  color: #063399;
+}
+
+footer {
+  text-align: center;
+  background-color: #001248;
+  color: #ffffff;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+footer img {
+  width: clamp(15px, 5vw, 30px);
+  padding: 20px;
+  text-decoration: none;
+}
+
+footer a, footer p {
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+/* Estilo padrão para o menu */
+.menu-toggle {
+  display: none; /* Esconde o menu hambúrguer por padrão */
+}
+
+.menu {
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.scroll {
+  height: 70px; /* Altura do menu após rolar 100px */
+  background-color: #ffffff; /* Cor de fundo do menu após rolar 100px */
+  opacity: 1; /* Opacidade do menu após rolar 100px */
+  transition: all 0.8s; /* Adiciona uma transição suave */
+  top: 0;
+  width: 100%;
+  justify-content: center;
+  border-bottom: 1px solid #063399;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  align-items: flex-end;
+}
+
+.oculto {
+  display: none;
+}
+
+.logo-large {
+  position: absolute;
+  top: 5px;
+  left: 5%; /* Ajuste aqui para alinhar mais à esquerda */
+  z-index: 1001;
+}
+
+.logo-small {
+  position: absolute;
+  top: 5px;
+  left: 5%; /* Ajuste aqui para alinhar mais à esquerda */
+  z-index: 1001;
+}
+
+.gallery-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 30px 0 30px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  width: calc(50% - 20px);
+  margin: 10px;
+}
+
+.gallery {
+  display: flex;
+}
+
+.image {
+  flex: 0 0 auto;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.image img {
+  width: 100%;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  color: #001248;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev, .next {
+  font-size: 3em;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #fff; /* Cor de fundo do submenu */
+  color: #000000;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra */
+  font-size: 10px;
+}
+
+.menu li:hover .submenu {
+  display: block;
+}
+
+.submenu-arrow {
+  display: inline-block;
+  margin-left: 5px; /* Espaçamento entre o texto do menu e a seta */
+}
+
+.submenu-item {
+  position: relative; /* Necessário para posicionar a seta corretamente */
+}
+
+.submenu li a {
+  font-size: clamp(12px, 3vw, 14px); /* Tamanho da fonte ajustável conforme o viewport */
+  color: #001248;
+  font-weight: bold;
+}
+
+.slideshow {
+  width: 600px;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slideshow-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide1, .slide2 {
+  flex: 0 0 32%; /* 3 slides por vez */
+  transition: opacity 0.8s ease-in-out;
+  margin-right: 15px;
+}
+
+.slide1:last-child, .slide2:last-child {
+  margin-right: 0; /* Remove a margem da última imagem */
+}
+
+.slide1 img, .slide2 img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 36px; /* Tamanho do ícone da seta */
+  line-height: 50px; /* Alinhar verticalmente o ícone */
+  border-radius: 50%; /* Arredondar o contêiner da seta */
+}
+
+.arrow:hover {
+  background-color: black;
+}
+
+.arrow-left {
+  left: 0px;
+}
+
+.arrow-right {
+  right: 0px;
+}
+
+.video-container {
+  max-width: 800px; /* Largura máxima do contêiner */
+  margin: 0 auto; /* Centraliza o contêiner horizontalmente */
+  text-align: center; /* Alinha o conteúdo no centro */
+}
+
+.video-container video {
+  width: 80%; /* Ocupa toda a largura disponível */
+  display: block; /* Remove qualquer espaçamento adicional */
+  margin: 0 auto; /* Centraliza o vídeo horizontalmente */
+}
+
+.video-description {
+  font-weight: bold;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .banner1 {
+    height: auto; /* Ajusta a altura para se adaptar ao conteúdo */
+    padding: 20px; /* Adiciona padding para melhorar a legibilidade */
+  }
+
+  .banner1 h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte para telas menores */
+  }
+
+  .banner1 p {
+    font-size: 1rem; /* Ajusta o tamanho da fonte para telas menores */
+    width: 100%; /* Faz o texto ocupar toda a largura disponível */
+  }
+}
